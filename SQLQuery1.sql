@@ -1,6 +1,6 @@
 use Staging
 --Creating new customer dimension tables from data which we got
-CREATE TABLE customer_dataDIM(
+CREATE TABLE customer_dataDIM (
 		customer_id NVARCHAR(50) NOT NULL PRIMARY KEY,
 		customer_unique_id NVARCHAR(50) NOT NULL,
 		customer_zip_code_prefix INT NOT NULL,
@@ -14,7 +14,7 @@ SELECT * from customer_dataDIM
 
 
 --Creating new order dimension tables from data which we got
-CREATE TABLE orders_dataDIM(
+CREATE TABLE orders_dataFACT(
 		order_id NVARCHAR(50) NOT NULL,
 		customer_id NVARCHAR(50) NOT NULL,
 		order_status NVARCHAR(50) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE orders_dataDIM(
 )
 
 --Checking Table
-SELECT * from orders_dataDIM
+SELECT * from orders_dataFACT
 
 --Creating new review dimension tables from data which we got
 CREATE TABLE order_review_dataDIM(
@@ -65,7 +65,7 @@ CREATE TABLE geoloacation_dataDim(
 	geoloaction_lat FLOAT NOT NULL,
 	geoloaction_lng FLOAT NOT NULL,
 	geoloaction_city NVARCHAR(50) NOT NULL,
-	geoloaction_state NVARCHAR(50) NOT NULL,
+	geoloaction_state NVARCHAR(50),
 	PRIMARY KEY (geoloaction_zip_code_prefix)
 
 );
@@ -90,7 +90,7 @@ SELECT * FROM sellers_dataDim
 
 
 --Creating new order payment dimension tables from data which
-CREATE TABLE order_item_dataDim(
+CREATE TABLE order_item_dataDim (
 	order_id NVARCHAR(50) NOT NULL,
 	order_item_id INT NOT NULL,
 	product_id NVARCHAR(50) NOT NULL,
@@ -109,14 +109,20 @@ SELECT * FROM order_item_dataDim
 
 --Data Load from data Warehouse Database to this Database is Done by ETL(Talend)
 
-
-
-
+--i Mistakenly named order_data table as Dimension tables (DIM) follwing table is Fact table
+EXEC sp_rename 'orders_dataDIM', 'orders_dataFACT';
 
 
 	
-
-
+--Testing
+use Staging
+select * from customer_dataDIM;
+select * from geoloacation_dataDim
+select * from order_item_dataDim
+select * from order_payment_dataDIM
+select * from order_review_dataDIM
+select * from orders_dataFACT
+select * from sellers_dataDim
 
 
 
