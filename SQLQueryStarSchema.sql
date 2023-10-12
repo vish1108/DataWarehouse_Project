@@ -84,22 +84,29 @@ SELECT * FROM StarSchema;
 
 
 
---CREATE VIEW MLPrediction_DataMart AS
---SELECT
---    DF.order_id,
---    DC.customer_state,
---    DP.Payment_type,
---    rd.review_score,
---    OID.shipping_limit_date,
---    -- Add relevant features for your ML model
---    -- For example, encode categorical data, normalize numeric data, etc.
---FROM
---    orders_dataFACT DF
---JOIN
---    customer_dataDIM DC ON DF.customer_id = DC.customer_id
---JOIN
---    order_payment_dataDIM DP ON DF.order_id = DP.order_id
---JOIN
---    order_review_dataDIM rd ON DF.order_id = rd.order_id
---JOIN
---    order_item_dataDim OID ON DF.order_id = OID.order_id;
+CREATE VIEW MLPrediction_DataMart AS
+SELECT
+    DF.order_id,
+	DF.customer_id,
+    DC.customer_state,
+    DP.Payment_type,
+    DF.order_status,
+    rd.review_score,
+    OID.shipping_limit_date,
+	DF.order_purchase_timestamp,
+	DF.order_approved_at,
+	DF.order_estimated_delivery_date,
+	DF.order_delivered_customer_date
+FROM
+    orders_dataFACT DF
+JOIN
+    customer_dataDIM DC ON DF.customer_id = DC.customer_id
+JOIN
+    order_payment_dataDIM DP ON DF.order_id = DP.order_id
+JOIN
+    order_review_dataDIM rd ON DF.order_id = rd.order_id
+JOIN
+    order_item_dataDim OID ON DF.order_id = OID.order_id;
+
+--CHECKING FOR MLPrediction working
+SELECT * FROM MLPrediction_DataMart;
