@@ -61,28 +61,29 @@ SELECT * FROM StarSchema;
 
 
 
---CREATE VIEW PowerBI_DataMart AS
---SELECT
---    DF.customer_id,
---    DF.order_id,
---    DC.customer_city,
---    DC.customer_state,
---    DP.Payment_type,
---    rd.review_score,
---    OID.shipping_limit_date,
---    -- Add aggregated metrics as needed (e.g., total sales, average review score, etc.)
---FROM
---    orders_dataFACT DF
---JOIN
---    customer_dataDIM DC ON DF.customer_id = DC.customer_id
---JOIN
---    order_payment_dataDIM DP ON DF.order_id = DP.order_id
---JOIN
---    order_review_dataDIM rd ON DF.order_id = rd.order_id
---JOIN
---    order_item_dataDim OID ON DF.order_id = OID.order_id;
+CREATE VIEW PowerBI_DataMart AS
+SELECT
+    DF.customer_id,
+    DF.order_id,
+    DC.customer_city,
+    DC.customer_state,
+	DF.order_status,
+    DP.Payment_type,
+    rd.review_score,
+    OID.shipping_limit_date
+    -- Add aggregated metrics as needed (e.g., total sales, average review score, etc.)
+FROM
+    orders_dataFACT AS DF
+JOIN
+    customer_dataDIM AS DC ON DF.customer_id = DC.customer_id
+JOIN
+    order_payment_dataDIM AS DP ON DF.order_id = DP.order_id
+JOIN
+    order_review_dataDIM AS rd ON DF.order_id = rd.order_id
+JOIN
+    order_item_dataDim AS OID  ON DF.order_id = OID.order_id;
 
-
+use staging;
 
 CREATE VIEW MLPrediction_DataMart AS
 SELECT
@@ -110,3 +111,14 @@ JOIN
 
 --CHECKING FOR MLPrediction working
 SELECT * FROM MLPrediction_DataMart;
+
+SELECT count(order_status) FROM Staging.dbo.PowerBI_DataMart where order_status <> 'delivered';
+
+SELECT *
+FROM Staging.dbo.PowerBI_DataMart
+WHERE payment_type = (
+    SELECT MAX(payment_type)
+    FROM Staging.dbo.PowerBI_DataMart
+);
+
+
