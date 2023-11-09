@@ -3,6 +3,7 @@ Data is more valuable in this era, and big companies always want to have access 
 
 #Project Definition
 Created a Data warehouse Project using Python, MS-SQL server, Talend(ETL) and other Data Warehouse Concepts.
+
 <img width="536" alt="Project Diagram 2023-10-30 014908" src="https://github.com/vish1108/DataWarehouse_Project/assets/68471486/07c9bd21-c4a9-4665-947e-e3d52fde4278">
 
 ## Dataset
