@@ -14,12 +14,14 @@ For this project, we will use the [Brazilian E-commerce Public Dataset by Olis](
 ![Data Modeling](https://github.com/vish1108/DataWarehouse_Project/assets/68471486/bd9c3231-3805-4efe-816d-091c11663944)
 
 
-#Tech Stack
-1.Python
-2.MS-SQL SERVER
-3.Talend(ETL)
-4.Machine Learning
-4.Power BI
+# Tech Stack
+
+1. **Python**
+2. **MS-SQL SERVER**
+3. **Talend (ETL)**
+4. **Machine Learning**
+5. **Power BI**
+
 
 ## Project Steps
 
