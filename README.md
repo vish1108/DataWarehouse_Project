@@ -1,7 +1,7 @@
 # DataWarehouse_Project
 Data is more valuable in this era, and big companies always want to have access to the cleanest data available. However, in this generation, it is not easy to maintain such vast amounts of data. Therefore, these companies require individuals who can effectively manage and utilize this data to meet their business needs.
 
-#Project Definition
+#Project Definition :
 Created a Data warehouse Project using Python, MS-SQL server, Talend(ETL) and other Data Warehouse Concepts.
 
 <img width="536" alt="Project Diagram 2023-10-30 014908" src="https://github.com/vish1108/DataWarehouse_Project/assets/68471486/07c9bd21-c4a9-4665-947e-e3d52fde4278">
