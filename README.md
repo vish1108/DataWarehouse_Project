@@ -15,6 +15,11 @@ For this project, we will use the [Brazilian E-commerce Public Dataset by Olis](
 ![Data Modeling](https://github.com/vish1108/DataWarehouse_Project/assets/68471486/bd9c3231-3805-4efe-816d-091c11663944)
 
 
+## Power BI Report
+
+<img width="503" alt="Power Bi Dashboard" src="https://github.com/vish1108/DataWarehouse_Project/assets/68471486/ed702144-0aa5-4c5b-8c18-809f9a84d795">
+
+
 # Tech Stack
 
 1. **Python**
