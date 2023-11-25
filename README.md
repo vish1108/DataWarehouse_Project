@@ -15,7 +15,7 @@ For this project, we will use the [Brazilian E-commerce Public Dataset by Olis](
 ![Data Modeling](https://github.com/vish1108/DataWarehouse_Project/assets/68471486/bd9c3231-3805-4efe-816d-091c11663944)
 
 
-## Power BI Report
+## [Power BI Report](https://github.com/vish1108/DataWarehouse_Project/blob/master/Power%20BI%20Dashboard%20From%20Data%20Mart.pbix)
 
 <img width="503" alt="Power Bi Dashboard" src="https://github.com/vish1108/DataWarehouse_Project/assets/68471486/ed702144-0aa5-4c5b-8c18-809f9a84d795">
 
@@ -33,15 +33,15 @@ For this project, we will use the [Brazilian E-commerce Public Dataset by Olis](
 
 This project involves the following key steps:
 
-1. **Data Loading in Python:** Initial data loading and preprocessing using Python.
+1. **[Data Loading in Python](https://github.com/vish1108/DataWarehouse_Project/blob/master/Data%20Cleaning%20Task%20%26%20Loading.ipynb):** Initial data loading and preprocessing using Python.
 
-2. **Data Cleaning:** Data is cleaned and prepared for further processing to ensure its quality.
+2. **[Data Cleaning](https://github.com/vish1108/DataWarehouse_Project/blob/master/Data%20Cleaning%20Task%20%26%20Loading.ipynb):** Data is cleaned and prepared for further processing to ensure its quality.
 
-3. **Data Loading in MS-SQL Server:** Cleaned data is loaded into MS-SQL Server for storage and analysis.
+3. **[Data Loading in MS-SQL Server](https://github.com/vish1108/DataWarehouse_Project/blob/master/Data%20Loading%20Task2.ipynb):** Cleaned data is loaded into MS-SQL Server for storage and analysis.
 
-4. **Creating ETL Jobs:** Extract, Transform, Load (ETL) jobs are designed and implemented to facilitate data processing and integration.
+4. **[Creating ETL Jobs](https://github.com/vish1108/DataWarehouse_Project/tree/master/Talend_ETL_Jobs/DATA_LOADING_FROM_SOURCE_TO_DIMENSION):** Extract, Transform, Load (ETL) jobs are designed and implemented to facilitate data processing and integration.
 
-5. **Data Modeling:** Data modeling techniques are applied to structure and organize data effectively for analysis.
+5. **[Data Modeling](https://github.com/vish1108/DataWarehouse_Project/assets/68471486/bd9c3231-3805-4efe-816d-091c11663944):** Data modeling techniques are applied to structure and organize data effectively for analysis.
 
 6. **Creating Star Schema:** Designing a star schema to optimize query performance and facilitate data retrieval.
 
